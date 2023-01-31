@@ -1,29 +1,23 @@
 public class Main {
-    public static void intercalaryYear(int issueCount) {
-        System.out.println(issueCount + " год является високосным");
-    }
-
-    public static void notIntercalaryYear(int issueCount) {
-        System.out.println(issueCount + " год не является високосным");
-    }
-
     public static void main(String[] args) {
-
-        task1();
+        int year = 2023;
+         printInfoAboutYear(year);
 
     }
 
-    public static void task1() {
-        System.out.println("_______________________________________Задача №1________________________________________");
-        int year = 2024;
-        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
-            intercalaryYear(year);
+    private static void printInfoAboutYear(int year) {
+        if (isLeapYear(year)) {
+            System.out.println(year + " год является високосным");
         } else {
-            notIntercalaryYear(year);
+            System.out.println(year + " год не является високосным");
         }
-
     }
 
+    private static boolean isLeapYear(int year) {
+        return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
 
+    }
 }
+
+
 
